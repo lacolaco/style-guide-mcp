@@ -21,7 +21,7 @@ describe('TypeScriptStyleGuide', () => {
       const result = await styleGuide.fetchStyleGuideMarkdown();
 
       expect(global.fetch).toHaveBeenCalledWith(
-        'https://google.github.io/styleguide/tsguide.html',
+        'https://raw.githubusercontent.com/google/styleguide/refs/heads/gh-pages/tsguide.html',
       );
       expect(mockResponse.text).toHaveBeenCalled();
       expect(result).toContain('Title');
@@ -30,9 +30,6 @@ describe('TypeScriptStyleGuide', () => {
 
     it('should throw error when fetch fails', async () => {
       const styleGuide = new TypeScriptStyleGuide();
-      const consoleErrorSpy = vi
-        .spyOn(console, 'error')
-        .mockImplementation(() => {});
       (global.fetch as any) = vi
         .fn()
         .mockRejectedValue(new Error('Network error'));
@@ -40,8 +37,33 @@ describe('TypeScriptStyleGuide', () => {
       await expect(styleGuide.fetchStyleGuideMarkdown()).rejects.toThrow(
         'Failed to fetch the style guide.',
       );
-      expect(consoleErrorSpy).toHaveBeenCalled();
-      consoleErrorSpy.mockRestore();
+    });
+
+    it('should return cached markdown if available', async () => {
+      const styleGuide = new TypeScriptStyleGuide();
+      const mockMarkdown = '# Cached Markdown\n...';
+      styleGuide['markdownCache'] = mockMarkdown;
+
+      const result = await styleGuide.fetchStyleGuideMarkdown();
+      expect(result).toBe(mockMarkdown);
+    });
+
+    it('should bypass cache if force is true', async () => {
+      const styleGuide = new TypeScriptStyleGuide();
+      const mockHtml =
+        '<html><body><h1>Title</h1><h2>Section1</h2></body></html>';
+      const mockResponse = {
+        text: vi.fn().mockResolvedValue(mockHtml),
+      };
+
+      (global.fetch as any) = vi.fn().mockResolvedValue(mockResponse);
+
+      await styleGuide.fetchStyleGuideMarkdown(true);
+
+      expect(global.fetch).toHaveBeenCalledWith(
+        'https://raw.githubusercontent.com/google/styleguide/refs/heads/gh-pages/tsguide.html',
+      );
+      expect(mockResponse.text).toHaveBeenCalled();
     });
   });
 
@@ -61,9 +83,9 @@ describe('TypeScriptStyleGuide', () => {
       vi.spyOn(styleGuide, 'fetchStyleGuideMarkdown').mockRejectedValue(
         new Error('Failed to fetch'),
       );
-      const result = await styleGuide.getContent();
-      expect(result).toBe(
-        'Failed to fetch the style guide. Please select from the category list.',
+
+      await expect(styleGuide.getContent()).rejects.toThrowError(
+        'Failed to fetch the style guide.',
       );
     });
   });

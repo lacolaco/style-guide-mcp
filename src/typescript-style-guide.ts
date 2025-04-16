@@ -4,7 +4,8 @@
 
 import Turndown from 'turndown';
 
-const STYLE_GUIDE_URL = 'https://google.github.io/styleguide/tsguide.html';
+const STYLE_GUIDE_URL =
+  'https://raw.githubusercontent.com/google/styleguide/refs/heads/gh-pages/tsguide.html';
 
 /**
  * Utility for fetching and parsing the Google TypeScript Style Guide.
@@ -36,8 +37,7 @@ export class TypeScriptStyleGuide {
       this.markdownCache = markdown;
       return markdown;
     } catch (error) {
-      // eslint-disable-next-line no-console
-      throw new Error('Failed to fetch the style guide content.', {
+      throw new Error('Failed to fetch the style guide.', {
         cause: error,
       });
     }
@@ -56,7 +56,7 @@ export class TypeScriptStyleGuide {
         ? markdown.substring(firstHeadingIndex)
         : markdown;
     } catch (error) {
-      throw new Error('Failed to fetch the style guide content.', {
+      throw new Error('Failed to fetch the style guide.', {
         cause: error,
       });
     }
