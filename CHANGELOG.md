@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/lacolaco/style-guide-mcp/compare/v1.0.0...v1.0.1) (2025-04-16)
+
+
+### Bug Fixes
+
+* move version field ([ae0602f](https://github.com/lacolaco/style-guide-mcp/commit/ae0602f4afc994bbd93d28a08789e59cc350345c))
+* trigger release ([33dc5e5](https://github.com/lacolaco/style-guide-mcp/commit/33dc5e523872fe9831836e81d66bdb90f3706d0d))
+
 ## 1.0.0 (2025-04-16)
 
 
