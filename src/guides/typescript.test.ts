@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { TypeScriptStyleGuide } from './typescript-style-guide';
+import { TypeScriptStyleGuide } from './typescript';
 
 describe('TypeScriptStyleGuide', () => {
   afterEach(() => {
