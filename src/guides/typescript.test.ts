@@ -67,10 +67,11 @@ describe('TypeScriptStyleGuide', () => {
     });
   });
 
-  describe('getStyleGuide', () => {
+  describe('getContent', () => {
     it('should return the style guide markdown for typescript', async () => {
       const styleGuide = new TypeScriptStyleGuide();
-      const mockMarkdown = '# Google TypeScript Style Guide\n...';
+      const mockMarkdown =
+        '<!-- source: https://raw.githubusercontent.com/google/styleguide/refs/heads/gh-pages/tsguide.html -->\n\n# Google TypeScript Style Guide\n...';
       vi.spyOn(styleGuide, 'fetchStyleGuideMarkdown').mockResolvedValue(
         mockMarkdown,
       );
