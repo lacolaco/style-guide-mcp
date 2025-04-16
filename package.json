@@ -5,6 +5,7 @@
     "build": "esbuild src/index.ts --bundle --platform=node --outdir=build --format=esm",
     "build:watch": "esbuild src/index.ts --bundle --platform=node --outdir=build --format=esm --watch",
     "test": "vitest run --typecheck.tsconfig tsconfig.test.json",
+    "test:watch": "vitest --typecheck.tsconfig tsconfig.test.json",
     "format": "prettier --write .",
     "run-inspector": "npx @modelcontextprotocol/inspector node build/index.js",
     "dev": "npx concurrently \"npm run build:watch\" \"npm run run-inspector\""
