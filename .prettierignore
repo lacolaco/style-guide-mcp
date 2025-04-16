@@ -1,0 +1,5 @@
+# Prettier Ignore Files
+build
+node_modules
+
+pnpm-lock.yaml
