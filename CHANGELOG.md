@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/lacolaco/style-guide-mcp/compare/v1.0.3...v1.1.0) (2025-04-16)
+
+
+### Features
+
+* add source notice header to style guide contents ([#16](https://github.com/lacolaco/style-guide-mcp/issues/16)) ([d5243cf](https://github.com/lacolaco/style-guide-mcp/commit/d5243cf71183a75c1ec01a8bc55485e4dfbc0b59))
+
 ## [1.0.3](https://github.com/lacolaco/style-guide-mcp/compare/v1.0.2...v1.0.3) (2025-04-16)
 
 
