@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { StyleGuideServer } from './server';
 
 const server = new StyleGuideServer();
