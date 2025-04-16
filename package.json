@@ -1,5 +1,5 @@
 {
-  "name": "angular-style-guide-mcp",
+  "name": "@lacolaco/style-guide-mcp",
   "type": "module",
   "scripts": {
     "build": "esbuild src/index.ts --bundle --platform=node --outdir=build --format=esm",
