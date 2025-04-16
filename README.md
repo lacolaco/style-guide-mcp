@@ -3,6 +3,10 @@
 This project is a Model Context Protocol (MCP) server which provides coding style guide for developers.
 It allows developers to adhere to best practices and maintain consistency in their code.
 
+> [!NOTE]
+> This project is a work for personal learning purposes and is not intended for production use.
+> No warranty is provided.
+
 ## Available Tools
 
 - **typescript-style-guide**: Returns the [Google TypeScript Style Guide][] in Markdown format.
@@ -13,63 +17,52 @@ It allows developers to adhere to best practices and maintain consistency in the
 
 ## Installation
 
-1. Clone the repository:
+`style-guide-mcp` command line tool is available as an npm package. You can install it globally using the following command:
 
-   ```bash
-   git clone <repository-url>
-   cd style-guide-mcp
-   ```
+```bash
+# Resolve @lacolaco scope package from GitHub Packages
+npm_config_@lacolaco:registry=https://npm.pkg.github.com/
 
-2. Install dependencies:
+# npm
+npm install -g @lacolaco/style-guide-mcp
 
-   ```bash
-   pnpm install
-   ```
+# pnpm
+pnpm add -g @lacolaco/style-guide-mcp
+```
 
-3. Build the project:
-   ```bash
-   pnpm build
-   ```
-
-## Usage
-
-### Start the MCP Server
-
-Replace `<cloned directory>` with the path to the cloned repository on your machine.
-
-**mcp.json** (VS Code)
+**mcp.json** (after global installation)
 
 ```json
 {
   "servers": {
     "style-guide-mcp": {
       "type": "stdio",
-      "command": "node",
-      "args": ["<cloned directory>/build/index.js"],
-      "env": {}
+      "command": "style-guide-mcp"
     }
   }
 }
 ```
 
-**Cline Setting**
+Or, you can also install it with npx in MCP server setting (see below).
+
+**mcp.json** (without global installation)
 
 ```json
 {
-  "mcpServers": {
+  "servers": {
     "style-guide-mcp": {
       "type": "stdio",
-      "command": "node",
-      "args": ["<cloned directory>/build/index.js"],
-      "env": {}
+      "command": "npx",
+      "args": ["--package", "@lacolaco/style-guide-mcp", "style-guide-mcp"],
+      "env": {
+        "npm_config_@lacolaco:registry": "https://npm.pkg.github.com/"
+      }
     }
   }
 }
 ```
 
 ### Example Prompt
-
-**GitHub Copilot Chat** (VS Code)
 
 ```plaintext
 Refactor the code to follow #typescript-style-guide.
