@@ -24,7 +24,9 @@
     "build",
     "README.md"
   ],
-  "bin": "build/index.js",
+  "bin": {
+    "style-guide-mcp": "build/index.js"
+  },
   "engines": {
     "node": ">=20.0.0"
   },
@@ -39,9 +41,7 @@
   },
   "packageManager": "pnpm@10.8.0",
   "dependencies": {
-    "@hono/node-server": "^1.14.1",
     "@modelcontextprotocol/sdk": "^1.9.0",
-    "hono": "^4.7.7",
     "turndown": "^7.2.0"
   },
   "devDependencies": {
@@ -52,7 +52,6 @@
     "concurrently": "^9.1.2",
     "esbuild": "^0.25.0",
     "prettier": "^3.2.5",
-    "tsx": "^4.7.1",
     "typescript": "^5.8.3",
     "vitest": "^3.1.1"
   }
