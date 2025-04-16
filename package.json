@@ -1,6 +1,32 @@
 {
   "name": "@lacolaco/style-guide-mcp",
+  "description": "A Node.js MCP server for style guide sharing.",
   "type": "module",
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lacolaco/style-guide-mcp.git"
+  },
+  "homepage": "https://github.com/lacolaco/style-guide-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/lacolaco/style-guide-mcp/issues"
+  },
+  "author": "lacolaco <suguru.inatomi@gmail.com>",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "files": [
+    "build",
+    "README.md"
+  ],
+  "bin": "build/index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "build": "esbuild src/index.ts --bundle --platform=node --outdir=build --format=esm",
     "build:watch": "esbuild src/index.ts --bundle --platform=node --outdir=build --format=esm --watch",
