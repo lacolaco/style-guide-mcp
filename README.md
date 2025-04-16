@@ -10,12 +10,14 @@ This project provides a Model Context Protocol (MCP) server for the Angular Styl
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd angular-style-guide-mcp
    ```
 
 2. Install dependencies:
+
    ```bash
    pnpm install
    ```
@@ -30,6 +32,7 @@ This project provides a Model Context Protocol (MCP) server for the Angular Styl
 ### Start the MCP Server
 
 Run the following command to start the MCP server:
+
 ```bash
 node build/index.js
 ```
@@ -37,6 +40,7 @@ node build/index.js
 ### Available Tools
 
 1. **get_style_guide_categories**
+
    - Description: Returns a list of categories from the Google TypeScript Style Guide.
    - Input: None
 
@@ -50,6 +54,7 @@ node build/index.js
 ### Run in Development Mode
 
 Use the following command to start the server in watch mode:
+
 ```bash
 pnpm dev
 ```
