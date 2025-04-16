@@ -48,9 +48,12 @@ export class AngularStyleGuide {
     try {
       const markdown = await this.fetchStyleGuideMarkdown();
       const firstHeadingIndex = markdown.indexOf('#');
-      return firstHeadingIndex !== -1
-        ? markdown.substring(firstHeadingIndex)
-        : markdown;
+      const header = `<!-- source: ${ANGULAR_STYLE_GUIDE_URL} -->\n`;
+      const content =
+        firstHeadingIndex !== -1
+          ? markdown.substring(firstHeadingIndex)
+          : markdown;
+      return header + content;
     } catch (error) {
       throw new Error('Failed to fetch the style guide.', {
         cause: error,
