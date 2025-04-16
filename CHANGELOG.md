@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/lacolaco/style-guide-mcp/compare/v1.0.1...v1.0.2) (2025-04-16)
+
+
+### Bug Fixes
+
+* update package.json and pnpm-lock.yaml to remove unused dependencies ([b0db1ca](https://github.com/lacolaco/style-guide-mcp/commit/b0db1ca8620365659af227ed6c737eaa9408bb0f))
+
 ## [1.0.1](https://github.com/lacolaco/style-guide-mcp/compare/v1.0.0...v1.0.1) (2025-04-16)
 
 
