@@ -1,13 +1,15 @@
 # @lacolaco/style-guide-mcp
 
-This project provides a Model Context Protocol (MCP) server for coding style guide like [Google TypeScript Style Guide][].
+This project is a Model Context Protocol (MCP) server which provides coding style guide for developers.
 It allows developers to adhere to best practices and maintain consistency in their code.
-
-[Google TypeScript Style Guide]: https://google.github.io/styleguide/tsguide.html
 
 ## Available Tools
 
-- **typescript-style-guide**: Returns the full Google TypeScript Style Guide in Markdown format.
+- **typescript-style-guide**: Returns the [Google TypeScript Style Guide][] in Markdown format.
+- **angular-style-guide**: Returns the full [Angular Style Guide][] in Markdown format.
+
+[Google TypeScript Style Guide]: https://google.github.io/styleguide/tsguide.html
+[Angular Style Guide]: https://angular.dev/style-guide
 
 ## Installation
 
@@ -65,13 +67,13 @@ Replace `<cloned directory>` with the path to the cloned repository on your mach
 }
 ```
 
-### Available Tools
+### Example Prompt
 
-1. **typescript-style-guide**
+**GitHub Copilot Chat** (VS Code)
 
-   - Description: Returns the full Google TypeScript Style Guide in Markdown format.
-   - Input: None
-   - Output: Markdown text
+```plaintext
+Refactor the code to follow #typescript-style-guide.
+```
 
 ## Development
 
