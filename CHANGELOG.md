@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/lacolaco/style-guide-mcp/compare/v1.0.2...v1.0.3) (2025-04-16)
+
+
+### Bug Fixes
+
+* add shebang to index.ts for executable script ([e3714fa](https://github.com/lacolaco/style-guide-mcp/commit/e3714fa9112f30c4aaa3070f54c8428d5e017e79))
+
 ## [1.0.2](https://github.com/lacolaco/style-guide-mcp/compare/v1.0.1...v1.0.2) (2025-04-16)
 
 
