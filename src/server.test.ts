@@ -4,6 +4,7 @@ import { TextContentSchema } from '@modelcontextprotocol/sdk/types.js';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { AngularStyleGuide } from './guides/angular';
 import { TypeScriptStyleGuide } from './guides/typescript';
+import { GoStyleGuide } from './guides/go';
 import { StyleGuideServer } from './server';
 
 const dummyTypeScriptStyleGuide = {
@@ -17,6 +18,12 @@ const dummyAngularStyleGuide = {
     return '# Angular Style Guide\n...';
   },
 } as AngularStyleGuide;
+
+const dummyGoStyleGuide = {
+  getContent: async () => {
+    return '# Go Style Guide\n...';
+  },
+} as GoStyleGuide;
 
 describe('StyleGuideServer', () => {
   let client: Client;
@@ -32,6 +39,7 @@ describe('StyleGuideServer', () => {
     server = new StyleGuideServer(
       dummyTypeScriptStyleGuide,
       dummyAngularStyleGuide,
+      dummyGoStyleGuide,
     );
     await Promise.all([
       client.connect(clientTransport),
@@ -47,9 +55,10 @@ describe('StyleGuideServer', () => {
   it('should list tools', async () => {
     const { tools } = await client.listTools();
     expect(tools).toBeDefined();
-    expect(tools.length).toBe(2);
+    expect(tools.length).toBe(3);
     expect(tools.some((t) => t.name === 'typescript-style-guide')).toBe(true);
     expect(tools.some((t) => t.name === 'angular-style-guide')).toBe(true);
+    expect(tools.some((t) => t.name === 'go-style-guide')).toBe(true);
   });
 
   it('should fetch TypeScript Style Guide', async () => {
@@ -71,6 +80,17 @@ describe('StyleGuideServer', () => {
     expect(content).toBeDefined();
     const parsed = TextContentSchema.parse(content[0]);
     expect(parsed.text).toContain('# Angular Style Guide');
+    expect(parsed.mimeType).toBe('text/markdown');
+  });
+
+  it('should fetch Go Style Guide', async () => {
+    const { content } = (await client.callTool({
+      name: 'go-style-guide',
+      args: {},
+    })) as { content: unknown[] };
+    expect(content).toBeDefined();
+    const parsed = TextContentSchema.parse(content[0]);
+    expect(parsed.text).toContain('# Go Style Guide');
     expect(parsed.mimeType).toBe('text/markdown');
   });
 });
