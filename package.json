@@ -1,6 +1,6 @@
 {
   "name": "@lacolaco/style-guide-mcp",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A Node.js MCP server for style guide sharing.",
   "type": "module",
   "main": "build/index.js",

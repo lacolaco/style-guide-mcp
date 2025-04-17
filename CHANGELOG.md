@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/lacolaco/style-guide-mcp/compare/v1.1.0...v1.2.0) (2025-04-17)
+
+
+### Features
+
+* add Go Style Guide support ([#19](https://github.com/lacolaco/style-guide-mcp/issues/19)) ([089aba7](https://github.com/lacolaco/style-guide-mcp/commit/089aba75a2f39aab8ad1ff299ea30c9db0f54a3b))
+
 ## [1.1.0](https://github.com/lacolaco/style-guide-mcp/compare/v1.0.3...v1.1.0) (2025-04-16)
 
 
