@@ -39,7 +39,7 @@
     "run-inspector": "npx @modelcontextprotocol/inspector node build/index.js",
     "dev": "npx concurrently \"npm run build:watch\" \"npm run run-inspector\""
   },
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.8.1",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.9.0",
     "turndown": "^7.2.0"
