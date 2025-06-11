@@ -45,7 +45,7 @@
     "turndown": "^7.2.0"
   },
   "devDependencies": {
-    "@modelcontextprotocol/inspector": "^0.9.0",
+    "@modelcontextprotocol/inspector": "^0.14.0",
     "@types/node": "^22.0.0",
     "@types/turndown": "^5.0.5",
     "@vitest/ui": "^3.1.1",
